@@ -1,3 +1,4 @@
+import React from 'react';
 import MyParagraph from "./MyParagraph";
 
 const DemoOutput = (props) => {
@@ -9,4 +10,5 @@ const DemoOutput = (props) => {
 
 };
 
-export default DemoOutput;
+// compare new and previous props values. if no change, no re-render
+export default React.memo(DemoOutput);

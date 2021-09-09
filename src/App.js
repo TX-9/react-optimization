@@ -6,6 +6,8 @@ import DemoOutput from './components/Demo/DemoOutput';
 function App() {
   const [ showDemo, setShowDemo ] = useState(false);
   console.log('App RUNNING!');
+
+  // brand new funtion evertime App is executed
   const clickHandler = ()=> {
     setShowDemo(prevShowDemo => !prevShowDemo);
   };
@@ -13,7 +15,9 @@ function App() {
   return (
     <div className="app">
       <h1>Hi there!</h1>
+      {/* React.memo(Button) not working because clickHandler is object */}
       <Button onClick={clickHandler}>Toggle Demo</Button>
+      {/* false is premitive */}
       <DemoOutput show={false}></DemoOutput>
     </div>
   );
